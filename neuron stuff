@@ -1,0 +1,33 @@
+<div class="neuron_section">
+        <h2>neuron.com</h2>
+        <div class="neuron_info_divs">
+          <div class="neuron_info_divs_about">
+            <h3>About</h3>
+            <p>Personal project for innovative neuroscience networking website</p>
+          </div>
+          <div class="neuron_info_divs_development">
+            <h3>Development</h3>
+            <p>Written in HTML5, CSS3 and Javasript. Access the source code files <a href="https://github.com/NathanNS/nathanns.github.io">here</a>.</p>
+          </div>
+          <div class="neuron_info_divs_features">
+            <h3>Features</h3>
+            <p><a href="neuron.html">Fully responsive</a> for access on all device types.</p>
+          </div>
+        </div>
+        <div class="expander_container2">
+          <a href="" title="To the Website">
+            <div class="neuron_homepage">
+            </div>
+          </a>
+          <a href="" title="To the Website">
+            <div class="neuron_page2">
+            </div>
+          </a>
+          <a href="" title="To the Website">
+            <div class="neuron_page3">
+            </div>
+          </a>
+          <div class="neuron_logo"><img src="">
+          </div>
+        </div>
+      </div>
