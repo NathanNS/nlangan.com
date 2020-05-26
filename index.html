@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>nlangan.com</title>
+    <script src="https://kit.fontawesome.com/66eb0964bc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    .home_section {
+      height:70vh;
+      background: #bdc3c7;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to bottom right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      padding-top:30vh;
+    }
+
+    .home_section h1 {
+      text-align:center;
+      font-size:6vw;
+      color:white;
+      margin-bottom:1vh;
+    }
+
+    .home_section h2 {
+      font-size:3vw;
+      color:white;
+      text-align:right;
+      margin-right:14vw;
+    }
+
+    .social_media {
+      margin-top:8vh;
+    }
+
+    .social_media ul {
+      list-style-type:none;
+      text-align:center;
+    }
+
+    .social_media li {
+      display:inline-block;
+      margin:0px 1.5vw;
+      opacity:0.6;
+      cursor:pointer;
+      transition:all 0.4s ease;
+      border-radius:50%;
+      color:white;
+      border:1px solid white;
+      padding:10px;
+    }
+
+    .social_media .github:hover { /*<li tag>*/
+      color:white;
+      opacity:1;
+      border-color:white;
+    }
+
+    .social_media .linkedin:hover { /*<li tag>*/
+      color:white;
+      opacity:1;
+      border-color:white;
+    }
+
+    .social_media .email:hover { /*<li tag>*/
+      color:white;
+      opacity:1;
+      border-color:white;
+    }
+
+    .social_media .codepen:hover { /*<li tag>*/
+      color:white;
+      border-color:white;
+      opacity:1;
+    }
+
+    .bio_section {
+      height:50vh;
+      background:grey;
+    }
+
+    .bio_section h2 {
+      text-align:center;
+      color:white;
+      font-size:5vw;
+      padding-top:10vh;
+    }
+
+    .portfolio_section {
+      height:500vh;
+    }
+
+    .portfolio_title {
+      text-align:center;
+      font-size:5vw;
+      padding-top:10vh;
+      padding-bottom:6vh;
+    }
+
+    .dmy_section {
+      height:98vh;
+      transition:opacity 0.5s ease;
+      border-radius:5vw;
+      opacity:0.6;
+    }
+
+    .dmy_section:hover {
+      opacity:1;
+    }
+
+    .dmy_section h2 {
+      padding:3vh 0;
+      text-align:center;
+      transition:0.4s ease;
+      font-size:3vw;
+    }
+
+    .dmy_section h2 a {
+      color:black;
+      text-decoration:none;
+    }
+
+    .dmy_info_divs {
+      display:flex;
+      justify-content: space-around;
+      transition:0.4s ease;
+      margin:0 auto;
+      margin-top:3vh;
+    }
+
+    .dmy_info_divs div {
+      background:white;
+      width:30vw;
+      border-radius:3vw;
+      /*box-shadow:0 0 .5vw grey;*/
+    }
+
+    .dmy_info_divs div h3 {
+      text-align:center;
+      margin-top:2vh;
+    }
+
+    .dmy_info_divs p {
+      margin:2vw;
+      text-align:center;
+    }
+
+    .expander_container {
+      height:50vh;
+      width:100%;
+      margin:0 auto;
+      position:relative;
+      border-radius:50px;
+      transition:0.4s ease;
+      padding-top:6vh;
+      padding-bottom:2vh;
+    }
+
+    .homepage {
+      width:58vh;
+      height:40vh;
+      background:pink;
+      z-index:10;
+      transition: transform 0.8s ease;
+      transform-origin:bottom left;
+      cursor:pointer;
+      position:absolute;
+      background-image:url(Homepage-expander.png);
+      background-size:cover;
+      box-shadow:2px 2px 5px  rgba(0, 0, 0, 0.3);
+      border-radius:.3vw;
+      margin-left:1vw;
+      transition:0.8s ease;
+    }
+
+    .schedule {
+      width:58vh;
+      height:40vh;
+      background:pink;
+      transition: all 1s ease;
+      transform-origin: center;
+      cursor:pointer;
+      position:absolute;
+      z-index:9;
+      margin-left:5vw;
+      background-image:url(Schedule-expander.png);
+      background-size:cover;
+      border-radius:.3vw;
+      box-shadow:2px 2px 5px  rgba(0, 0, 0, 0.3);
+    }
+
+    .about {
+      width:58vh;
+      height:40vh;
+      background:pink;
+      transition: all 1.2s ease;
+      transform-origin:bottom right;
+      cursor:pointer;
+      position:absolute;
+      z-index:8;
+      margin-left:9vw;
+      background-image:url(About-expander.png);
+      background-size:cover;
+      border-radius:.3vw;
+      box-shadow:2px 2px 5px  rgba(0, 0, 0, 0.3);
+    }
+
+    .expander_container:hover .logo {
+      transform:translate(60vw);
+    }
+
+    .expander_container:hover .schedule {
+      margin-left:34vw;
+    }
+
+    .expander_container:hover .about {
+      margin-left:67vw;
+    }
+
+    .homepage:hover {
+      transform:scale(1.3,1.3);
+      z-index:10;
+      transform-origin:top left; 
+    }
+
+    .schedule:hover {
+      transform:scale(1.3,1.3);
+      z-index:10;
+    }
+
+    .about:hover {
+      transform:scale(1.3,1.3);
+      z-index:10;
+      transform-origin:top right; 
+    }
+
+    .logo {
+      position:absolute;
+      height:10vh;
+      width:45vw;
+      margin-left:48vw;
+      margin-top:13vh;
+      transition:transform 1.2s;
+    }
+
+    .logo img {
+      width:100%;
+      height:100%;
+    }
+
+    /*////////////////////////////////////////Neuron Section//////////////////////////////////////////*/
+
+    .neuron_section {
+      height:98vh;
+      transition:opacity 0.5s ease;
+      border-radius:5vw;
+      opacity:0.6;
+      margin-top: 5vh;
+    }
+
+    .neuron_section:hover {
+      opacity:1;
+    }
+
+    .neuron_section h2 {
+      padding:3vh 0;
+      text-align:center;
+      transition:0.4s ease;
+      font-size:3vw;
+    }
+
+    .neuron_info_divs {
+      display:flex;
+      justify-content: space-around;
+      transition:0.4s ease;
+      margin:0 auto;
+      margin-top:3vh;
+    }
+
+    .neuron_info_divs div {
+      background:white;
+      width:30vw;
+      border-radius:3vw;
+      /*box-shadow:0 0 .5vw grey;*/
+    }
+
+    .neuron_info_divs div h3 {
+      text-align:center;
+      margin-top:2vh;
+    }
+
+    .neuron_info_divs p {
+      margin:2vw;
+      text-align:center;
+    }
+
+    .expander_container2 {
+      height:50vh;
+      width:100%;
+      margin:0 auto;
+      position:relative;
+      border-radius:50px;
+      transition:0.4s ease;
+      padding-top:6vh;
+      padding-bottom:2vh;
+    }
+
+    .neuron_homepage {
+      width:58vh;
+      height:40vh;
+      background:blue;
+      z-index:10;
+      transition: transform 0.8s ease;
+      transform-origin:bottom left;
+      cursor:pointer;
+      position:absolute;
+      background-size:cover;
+      box-shadow:2px 2px 5px  rgba(0, 0, 0, 0.3);
+      border-radius:.3vw;
+      margin-left:1vw;
+      transition:0.8s ease;
+    }
+
+    .neuron_page2 {
+      width:58vh;
+      height:40vh;
+      background:blue;
+      transition: all 1s ease;
+      transform-origin: center;
+      cursor:pointer;
+      position:absolute;
+      z-index:9;
+      margin-left:5vw;
+      background-size:cover;
+      border-radius:.3vw;
+      box-shadow:2px 2px 5px  rgba(0, 0, 0, 0.3);
+    }
+
+    .neuron_page3 {
+      width:58vh;
+      height:40vh;
+      background:blue;
+      transition: all 1.2s ease;
+      transform-origin:bottom right;
+      cursor:pointer;
+      position:absolute;
+      z-index:8;
+      margin-left:9vw;
+      background-size:cover;
+      border-radius:.3vw;
+      box-shadow:2px 2px 5px  rgba(0, 0, 0, 0.3);
+    }
+
+    .expander_container2:hover .neuron_logo {
+      transform:translate(60vw);
+    }
+
+    .expander_container2:hover .neuron_page2 {
+      margin-left:34vw;
+    }
+
+    .expander_container2:hover .neuron_page3 {
+      margin-left:67vw;
+    }
+
+    .neuron_homepage:hover {
+      transform:scale(1.3,1.3);
+      z-index:10;
+      transform-origin:top left; 
+    }
+
+    .neuron_page2:hover {
+      transform:scale(1.3,1.3);
+      z-index:10;
+    }
+
+    .neuron_page3:hover {
+      transform:scale(1.3,1.3);
+      z-index:10;
+      transform-origin:top right; 
+    }
+
+    .neuron_logo {
+      position:absolute;
+      height:10vh;
+      width:45vw;
+      margin-left:48vw;
+      margin-top:13vh;
+      transition:transform 1.2s;
+    }
+
+    .neuron_logo img {
+      width:100%;
+      height:100%;
+    }
+    
+    </style>
+  </head>
+  <body class="home_body">
+    <header>
+      <ul>
+        <a href="#home_anchor" class="home_button"><li>Home</li></a>
+        <a href="#bio_anchor" class="bio_button"><li>Biography</li></a>
+        <a href="#portfolio_anchor" class="portfolio_button"><li >Portfolio</li></a>
+        <a href="cv.html" class="cv_button"><li>Ciriculum Vitae</li></a>
+      </ul>
+    </header>
+    <section class="home_section" id="home_anchor">
+      <h1>Freelance Web Development</h1>
+      <h2>Nathaniel Langan</h2>
+      <div class="social_media">
+        <ul>
+          <a href="https://github.com/NathanNS"><li class="github"><i class="fab fa-github fa-2x"></i></li></a>
+          <a href="https://www.linkedin.com/in/nathaniel-langan-656264137/"><li class="linkedin"><i class="fab fa-linkedin fa-2x"></i></li></a>
+          <a href="mailto:nlangan18@gmail.com"><li class="email"><i class="far fa-envelope fa-2x"></i></li></a>
+          <a href="https://codepen.io/nlangan18"><li class="codepen"><i class="fab fa-codepen fa-2x"></i></li></a>
+        </ul>
+      </div>
+    </section>
+    <section class="bio_section" id="bio_anchor">
+      <h2>Biography</h2>
+    </section>
+    <section class="portfolio_section" id="portfolio_anchor">
+      <h2 class="portfolio_title">Portfolio</h2>
+      <div class="dmy_section">
+        <h2><a href="https://devonmartinyoga.com/index.html" title="To the Website">devonmartinyoga.com</a></h2>
+        <div class="dmy_info_divs">
+          <div class="dmy_info_divs_about">
+            <h3>About</h3>
+            <p>Freelance project for the business Devon Martin Yoga, LLC.</p>
+          </div>
+          <div class="dmy_info_divs_development">
+            <h3>Development</h3>
+            <p>Written in HTML5 and CSS3. Access the source code files <a href="https://github.com/NathanNS/nathanns.github.io">here</a>.</p>
+          </div>
+          <div class="dmy_info_divs_features">
+            <h3>Features</h3>
+            <p><a href="dmy.html">Fully responsive</a> for access on all device types. Youtube video and google form embedding.</p>
+          </div>
+        </div>
+        <div class="expander_container">
+          <a href="https://devonmartinyoga.com/index.html" title="To the Website">
+            <div class="homepage">
+            </div>
+          </a>
+          <a href="https://devonmartinyoga.com/schedule.html" title="To the Website">
+            <div class="schedule">
+            </div>
+          </a>
+          <a href="https://devonmartinyoga.com/about_me.html" title="To the Website">
+            <div class="about">
+            </div>
+          </a>
+          <div class="logo"><img src="https://scontent.fyto1-1.fna.fbcdn.net/v/t1.0-9/95940062_10216951275998742_1747872679530070016_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=2qqZOeFrJfcAX-VF8iS&_nc_ht=scontent.fyto1-1.fna&oh=0f769d788147f9596a5e2da5b5866439&oe=5EE9396E">
+          </div>
+        </div>
+      </div>
+      <div class="neuron_section">
+        <h2>neuron.com</h2>
+        <div class="neuron_info_divs">
+          <div class="neuron_info_divs_about">
+            <h3>About</h3>
+            <p>Personal project for innovative neuroscience networking website</p>
+          </div>
+          <div class="neuron_info_divs_development">
+            <h3>Development</h3>
+            <p>Written in HTML5, CSS3 and Javasript. Access the source code files <a href="https://github.com/NathanNS/nathanns.github.io">here</a>.</p>
+          </div>
+          <div class="neuron_info_divs_features">
+            <h3>Features</h3>
+            <p><a href="neuron.html">Fully responsive</a> for access on all device types.</p>
+          </div>
+        </div>
+        <div class="expander_container2">
+          <a href="" title="To the Website">
+            <div class="neuron_homepage">
+            </div>
+          </a>
+          <a href="" title="To the Website">
+            <div class="neuron_page2">
+            </div>
+          </a>
+          <a href="" title="To the Website">
+            <div class="neuron_page3">
+            </div>
+          </a>
+          <div class="neuron_logo"><img src="">
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
